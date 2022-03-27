@@ -1,0 +1,24 @@
+{
+  "name": "merkle-tree",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armanmamyan/merkle-tree.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/armanmamyan/merkle-tree/issues"
+  },
+  "homepage": "https://github.com/armanmamyan/merkle-tree#readme",
+  "dependencies": {
+    "keccak256": "^1.0.6",
+    "merkletreejs": "^0.2.31"
+  }
+}
