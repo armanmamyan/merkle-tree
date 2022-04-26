@@ -1,5 +1,4 @@
 const log = (content) => console.log(content);
-log('Node Starts')
 const { MerkleTree } = require('merkletreejs');
 const keccak256 = require('keccak256');
 const merkleConfig = {
@@ -10,9 +9,9 @@ log('======================')
 
 const whitelistAddressList = [
     '0xB92CCc983DFdbB0E22303031d772513C7D5692b7',
-    '0x1551AD0a4f658D3F66a55F1B6bAbac3300A81351',
-    '0x8Fa461074FC99D7B874569869b2559Addd00d9AD',
-    "0x0A098Eda01Ce92ff4A4CCb7A4fFFb5A43EBC70DC"
+    '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4',
+    '0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2',
+    "0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db"
 ];
 
 // Creating new array with hashing all whitelist addresses using keccak256
@@ -27,16 +26,19 @@ const rootHash = merkleTree.getRoot();
 
 // Client Side: use msg.sender address to query and API that returns merkle proof hash
 // required to derive the root hash of the MerkleTree
-const claimingAddress = leafNodeList[3];
+const claimingAddress = leafNodeList[1];
 
 // getHexProof returns the neighbour leaf and all parent nodes hashes that will
 // be required to derive the MerkleTree root hash of the
 const hexProof = merkleTree.getHexProof(claimingAddress);
 
 // Verifying hex proof to see if the address is in the whitelist
-const verify = merkleTree.verify(hexProof, claimingAddress, rootHash);
+// const verify = merkleTree.verify(hexProof, claimingAddress, rootHash);
 
 // log(merkleTree.toString()) // TO get merkle root
-// log(hexProof) // TO get proof hashes for Smart Contract
+log(hexProof) // TO get proof hashes for Smart Contract
 
-const proofHashes = ["0xae6aff81f64c5fe1ee77af4d7d2f724505316744298d1752c5236721594e3a77","0xefd8509d26063d6661b7e283898d49bc6dc5191443d73fb628fa858f4ece5310"];
+// console.log(merkleTree.verify(hexProof,claimingAddress, rootHash))
+
+
+// Example of proofed hash [ "0xe4aa63f87306767c7dca38d95089fd748b4c3b2b793034bf5ea88843a5f09c7b", "0x39a01635c6a38f8beb0adde454f205fffbb2157797bf1980f8f93a5f70c9f8e6"]
