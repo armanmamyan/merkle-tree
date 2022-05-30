@@ -11,7 +11,8 @@ const whitelistAddressList = [
     '0xB92CCc983DFdbB0E22303031d772513C7D5692b7',
     '0x5B38Da6a701c568545dCfcB03FcB875f56beddC4',
     '0xAb8483F64d9C6d1EcF9b849Ae677dD3315835cb2',
-    "0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db"
+    "0x4B20993Bc481177ec7E8f571ceCaE8A9e22C02db",
+    '0x1551AD0a4f658D3F66a55F1B6bAbac3300A81351'
 ];
 
 // Creating new array with hashing all whitelist addresses using keccak256
@@ -36,9 +37,7 @@ const hexProof = merkleTree.getHexProof(claimingAddress);
 // const verify = merkleTree.verify(hexProof, claimingAddress, rootHash);
 
 // log(merkleTree.toString()) // TO get merkle root
-log(hexProof) // TO get proof hashes for Smart Contract
+ log(hexProof) // TO get proof hashes for Smart Contract
 
 // console.log(merkleTree.verify(hexProof,claimingAddress, rootHash))
-
-
-// Example of proofed hash [ "0xe4aa63f87306767c7dca38d95089fd748b4c3b2b793034bf5ea88843a5f09c7b", "0x39a01635c6a38f8beb0adde454f205fffbb2157797bf1980f8f93a5f70c9f8e6"]
+// ["0xe4aa63f87306767c7dca38d95089fd748b4c3b2b793034bf5ea88843a5f09c7b", "39a01635c6a38f8beb0adde454f205fffbb2157797bf1980f8f93a5f70c9f8e6", "7496d9000555231d4e66c25b1ccce004a8f0060c2802eee4b267cd885239e2b4"]
